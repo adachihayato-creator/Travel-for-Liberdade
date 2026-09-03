@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>プロフィール画像メーカー</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <h1 class="page-title">プロフィール画像メーカー</h1>
+      <p class="page-description">
+        背景画像・名前・プロフィール本文を入力すると、上のプレビューにすぐ反映されます。
+      </p>
+
+      <!-- 完成イメージを表示するプレビュー領域 -->
+      <section class="preview-section" aria-label="完成プレビュー">
+        <div class="profile-card">
+          <!-- 背景画像は JavaScript で差し替える -->
+          <div class="profile-background" id="profileBackground"></div>
+
+          <!-- 読みやすさのための暗いグラデーション -->
+          <div class="profile-overlay"></div>
+
+          <!-- 画像の上に重ねる文字エリア -->
+          <div class="profile-text">
+            <h2 class="profile-name" id="previewName">サンプル名</h2>
+            <p class="profile-bio" id="previewBio">ここにプロフィール本文が表示されます。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 入力欄エリア -->
+      <section class="controls" aria-label="編集フォーム">
+        <label class="control-group">
+          <span class="control-label">背景画像を選択</span>
+          <input
+            type="file"
+            id="imageInput"
+            accept="image/*"
+            class="control-input"
+          />
+        </label>
+
+        <label class="control-group">
+          <span class="control-label">名前</span>
+          <input
+            type="text"
+            id="nameInput"
+            class="control-input"
+            placeholder="例：サイコ"
+            maxlength="30"
+          />
+        </label>
+
+        <label class="control-group">
+          <span class="control-label">プロフィール本文</span>
+          <textarea
+            id="bioInput"
+            class="control-textarea"
+            rows="7"
+            placeholder="例：&#10;職業：大学教授&#10;担当科目：発達心理学II&#10;どんな悩みも僕の心理学で全部解決！"
+          ></textarea>
+        </label>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
